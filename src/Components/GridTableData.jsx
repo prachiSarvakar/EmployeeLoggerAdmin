@@ -26,11 +26,11 @@ export const GridTableData = ({ data }) => {
   function createData(id, applicationType, applicationId, actionType, actionDetails, creationTimestamp) {
     return {
       id: id,
-      applicationType: applicationType && applicationType ? applicationType : "-",
-      applicationId: applicationId && applicationId ? applicationId : "-",
-      actionType: actionType && actionType ? actionType : "-",
-      actionDetails: actionDetails && actionDetails ? actionDetails : "-",
-      creationTimestamp: creationTimestamp && creationTimestamp ? creationTimestamp : "-",
+      applicationType: applicationType,
+      applicationId: applicationId,
+      actionType: actionType,
+      actionDetails: actionDetails,
+      creationTimestamp: creationTimestamp,
     };
   }
 

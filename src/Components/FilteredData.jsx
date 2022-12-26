@@ -1,21 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { useSearchParams } from "react-router-dom";
 import { Button, MenuItem, TextField, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 
-export const FilteredData = ({ data, filterTableData }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [searchLog, setSearchLog] = React.useState({
-    logID: "",
-    actionType: "",
-    applicationType: "",
-    fromDate: "",
-    toDate: "",
-    applicationID: "",
-  });
-
+export const FilteredData = ({ data, filterTableData, searchLog, setSearchLog }) => {
   let applicationTypeArray = data?.map(function (element) {
     return `${element?.applicationType}`;
   });
@@ -52,9 +41,6 @@ export const FilteredData = ({ data, filterTableData }) => {
 
   const searchResult = () => {
     filterTableData(searchLog);
-    const filterParams = Object.entries(searchLog).filter((item) => item[1] !== "");
-    const obj = Object.fromEntries(filterParams);
-    setSearchParams(obj);
   };
 
   return (
@@ -66,8 +52,8 @@ export const FilteredData = ({ data, filterTableData }) => {
               <Typography align="left">Employee Log Id</Typography>
               <TextField
                 name="logID"
+                value={searchLog.logID}
                 onChange={(e) => HandleFilterData(e.target.value, "logID")}
-                type="number"
                 size="small"
                 id="outlined-basic"
                 variant="outlined"
@@ -79,6 +65,7 @@ export const FilteredData = ({ data, filterTableData }) => {
               <Typography align="left">Action Type</Typography>
               <TextField
                 name="actionType"
+                value={searchLog.actionType}
                 onChange={(e) => HandleFilterData(e.target.value, "actionType")}
                 size="small"
                 select
@@ -96,6 +83,7 @@ export const FilteredData = ({ data, filterTableData }) => {
               <Typography align="left">Application Type</Typography>
               <TextField
                 name="applicationType"
+                value={searchLog.applicationType}
                 onChange={(e) => HandleFilterData(e.target.value, "applicationType")}
                 size="small"
                 select
@@ -113,6 +101,7 @@ export const FilteredData = ({ data, filterTableData }) => {
               <Typography align="left">From Date</Typography>
               <TextField
                 name="fromDate"
+                value={searchLog.fromDate}
                 onChange={(e) => HandleFilterData(e.target.value, "fromDate")}
                 type="date"
                 size="small"
@@ -126,6 +115,7 @@ export const FilteredData = ({ data, filterTableData }) => {
               <Typography align="left">To Date</Typography>
               <TextField
                 name="toDate"
+                value={searchLog.toDate}
                 onChange={(e) => HandleFilterData(e.target.value, "toDate")}
                 type="date"
                 size="small"
@@ -140,6 +130,7 @@ export const FilteredData = ({ data, filterTableData }) => {
               <TextField
                 onChange={(e) => HandleFilterData(e.target.value, "applicationID")}
                 name="applicationID"
+                value={searchLog.applicationID}
                 size="small"
                 id="outlined-basic"
                 variant="outlined"
