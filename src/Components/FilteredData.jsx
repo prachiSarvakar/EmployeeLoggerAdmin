@@ -83,7 +83,7 @@ export const FilteredData = ({ data, filterTableData }) => {
                 select
                 sx={{ width: 180 }}
               >
-                {actionTypeList.map((option) => (
+                {filterActionTypeList.map((option) => (
                   <MenuItem key={option} value={option}>
                     {option}
                   </MenuItem>
