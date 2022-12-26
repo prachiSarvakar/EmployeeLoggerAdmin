@@ -25,11 +25,11 @@ export const FilteredData = ({ data, filterTableData }) => {
   const applicationTypeList = [...new Set(applicationTypeArray)];
   const actionTypeList = [...new Set(actionTypeArray)];
 
-  var filterApplicationTypeList = applicationTypeList.filter((elements) => {
+  const filterApplicationTypeList = applicationTypeList.filter((elements) => {
     return elements !== "null";
   });
 
-  var filterActionTypeList = actionTypeList.filter((elements) => {
+  const filterActionTypeList = actionTypeList.filter((elements) => {
     return elements !== "null";
   });
 
