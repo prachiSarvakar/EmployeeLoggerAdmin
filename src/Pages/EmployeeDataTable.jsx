@@ -22,7 +22,7 @@ export const EmployeeDataTable = () => {
 
     const dataAfterFilter = data.filter((item) => {
       var count = 0;
-      dataToFilter.map((empData) => {
+      dataToFilter.forEach((empData) => {
         if (empData[0] === "logID" && String(item.logId).includes(empData[1])) {
           count++;
         } else if (empData[0] === "actionType" && empData[1] === item.actionType) {
