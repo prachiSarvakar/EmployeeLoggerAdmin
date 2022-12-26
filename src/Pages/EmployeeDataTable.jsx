@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { useSearchParams, useLocation } from "react-router-dom";
 import { Divider } from "@mui/material";
