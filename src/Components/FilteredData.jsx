@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useSearchParams } from "react-router-dom";
 import { Button, MenuItem, TextField, Typography } from "@mui/material";
