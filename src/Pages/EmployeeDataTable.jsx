@@ -21,7 +21,7 @@ export const EmployeeDataTable = () => {
     const dataToFilter = Object.entries(value).filter((item, index) => item[1] !== "");
 
     const dataAfterFilter = data.filter((item) => {
-      var count = 0;
+      let count = 0;
       dataToFilter.forEach((empData) => {
         if (empData[0] === "logID" && String(item.logId).includes(empData[1])) {
           count++;
@@ -40,7 +40,7 @@ export const EmployeeDataTable = () => {
           count++;
         }
       });
-      if (dataToFilter.length === count) return item;
+      return dataToFilter.length === count;
     });
     setFilterData(dataAfterFilter);
   };
