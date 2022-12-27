@@ -52,6 +52,7 @@ export const FilteredData = ({ data, filterTableData, searchLog, setSearchLog })
               <Typography align="left">Employee Log Id</Typography>
               <TextField
                 name="logID"
+                aria-label="logID"
                 value={searchLog.logID}
                 onChange={(e) => HandleFilterData(e.target.value, "logID")}
                 size="small"
