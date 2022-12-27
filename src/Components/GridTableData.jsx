@@ -54,7 +54,7 @@ export const GridTableData = ({ data }) => {
         boxShadow: "0px 2.17631px 7.61708px rgba(155, 204, 244, 0.241231)",
       }}
     >
-      <DataGrid rows={rows} direction="asc" columns={columns} pageSize={10} />
+      <DataGrid rows={rows} direction="asc" columns={columns} pageSize={10} rowsPerPageOptions={[10]} />
     </div>
   );
 };
